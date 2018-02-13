@@ -1,4 +1,4 @@
-# courses
+# Courses materials
 
 Welcome! 
 
