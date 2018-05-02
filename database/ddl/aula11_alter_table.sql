@@ -9,6 +9,7 @@ create table produto (
 
 );
 
+
 alter table produto add 
 	descricao varchar(200);
     
@@ -46,9 +47,6 @@ alter table produto
     foreign key (categoria)
     references categoria(categoria_id);
     
-alter table produto
-		drop foreign key categoria_FK;
-    
  create table funcionario (
  	codigo int,
     nome varchar(100)
@@ -68,4 +66,8 @@ alter table funcionario
 	add constraint ativo_CHK 
     check(ativo='Y' OR ativo='N');
     
+alter table funcionario
+	add constraint ano_CHK 
+    check(ano_nascimento>1950);
     
+ DROP table categoria;   
