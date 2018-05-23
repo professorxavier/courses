@@ -55,5 +55,29 @@ WHERE cod_fabricante=1;
 update produto SET preco=round(preco,2)
 WHERE cod_fabricante=1;
 
+select * from produto 
+	where preco>=100 and preco<120;
+    
+select * from produto
+	where preco>120 or estoque<50;
+    
+select round(avg(p.preco),2) as 'Preço Médio'
+ from produto p where cod_fabricante=1;
+    
+    
+select sum(preco*estoque) FROM produto;
+
+select p.nome as produto, f.nome as fabricante
+ from produto p, fabricante f
+	where p.cod_fabricante=f.fabricante_id AND
+    (preco>120 or estoque<50);
+
+select * from produto
+	order by estoque, preco DESC;
+    
+select cod_fabricante, sum(preco)
+from produto group by cod_fabricante;
 
 
+    
+    
