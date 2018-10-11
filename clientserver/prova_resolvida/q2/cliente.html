@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      function apagar() {
+        var campoNome = document.getElementById("nome");
+        var url = "http://localhost/prova/q2/catalog.php";
+        $.get(url,{op:"apagar",nome:campoNome.value},function (data) {
+          alert(data);
+        })
+      }
+
+      function atualizar() {
+        var campoFrom = document.getElementById("from");
+        var campoTo = document.getElementById("to");
+        var campoReajuste = document.getElementById("reajuste");
+        var url = "http://localhost/prova/q2/catalog.php";
+        $.get(url,{op:"atualizar",
+        from:campoFrom.value,
+        to:campoTo.value,
+        reajuste:campoReajuste.value
+      },
+        function (data) {
+          alert(data);
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      Nome: <input type="text" name="nome" id="nome" value="">
+      <button type="button" name="button" onclick="apagar()">Apagar</button>
+    </form>
+    <hr>
+    <form>
+      Preço 1: <input type="text" name="from" id="from" value=""></br>
+      Preço 2: <input type="text" name="to" id="to" value=""></br>
+      Reajuste: <input type="text" name="reajuste" id="reajuste" value=""></br>
+      <button type="button" name="button" onclick="atualizar()">Atualizar</button>
+    </form>
+  </body>
+</html>

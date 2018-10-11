@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      function enviar() {
+        var campoX = document.getElementById("x");
+        var campoY = document.getElementById("y");
+        var url = "http://localhost/prova/servidor.php";
+        $.post( url, {x:campoX.value,y:campoY.value},
+          function( data ) {
+          alert( data );
+        });
+      }
+    </script>
+
+  </head>
+  <body>
+    <form>
+      <input type="text" name="x" id="x" value="">
+      <input type="text" name="y" id="y" value="">
+      <button type="button" name="button" onclick="enviar()">Enviar</button>
+    </form>
+  </body>
+</html>
