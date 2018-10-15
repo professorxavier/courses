@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase /rest
+RewriteRule "^api/(.*)$" api.php [NC,L]
